@@ -1,33 +1,18 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
-
-import Footer from "../components/Footer.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "BlogHub";
 ---
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
-    <title>{pageTitle}</title>
-  </head>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Blogs by Me</h1>
+  <h2>... and my little dog, too!</h2>
 
-  <body>
-    <Header />
+  <p>This is where I will post about my journey learning Astro.</p>
 
-    <h1>Blogs by Me</h1>
-    <h2>... and my little dog, too!</h2>
-
-    <p>This is where I will post about my journey learning Astro.</p>
-
-    <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
-    </ul>
-    <Footer />
-  </body>
-</html>
+  <ul>
+    <li><a href="/posts/post-1/">Post 1</a></li>
+    <li><a href="/posts/post-2/">Post 2</a></li>
+    <li><a href="/posts/post-3/">Post 3</a></li>
+  </ul>
+</BaseLayout>

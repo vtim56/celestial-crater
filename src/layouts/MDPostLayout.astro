@@ -1,0 +1,31 @@
+---
+// import { decodedTextSpanIntersectsWith } from "typescript";
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+
+// const options = {
+//     dayPeriod: "narrow",
+//     minute: "2-digit",
+//     hour: "numeric",
+//     weekday: 'long',
+//   day: "2-digit",
+//   month: "long",
+//   year: "numeric",
+//   era: "short",
+// };
+
+// // yes, but this date will be taken in GMT
+// const pubDate = new Date(frontmatter.pubDate).toLocaleDateString('en-us', options)
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <!-- <h1>{frontmatter.title}</h1> -->
+  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>Written by: {frontmatter.author}</p>
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <!-- <p>Published on: {pubDate}</p> -->
+  <hr />
+
+  <slot />
+</BaseLayout>
